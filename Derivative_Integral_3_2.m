@@ -25,6 +25,7 @@ end
 %show time values from 0 to 12 seconds
 %include a grid, title and axes labels (include units on your axes labels
 
+figure;
 %Velocity Plot
 subplot(3,1,1)
 plot(time,vel,'b-o','LineWidth',1.5)
