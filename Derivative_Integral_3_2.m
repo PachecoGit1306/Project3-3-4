@@ -1,10 +1,5 @@
 %Create a script that will:
 
-% Create three separate plots: acceleration, velocity, and position.
-% -All graphs should
-%show time values from 0 to 12 seconds
-%include a grid, title and axes labels (include units on your axes labels
-
 %Create time and velocity arrays
 time = 0:1:12;
 vel = [0 1 1.8 2.4 2.6 2.7 2.6 2.2 2 1.9 1.8 1.8 1.8];
@@ -25,4 +20,17 @@ for i =2:length(time)
     position(i) = position(i-1) + (vel(i) + vel(i-1)) / 2*(time(i) - time(i-1));
 end
 
+% Create three separate plots: acceleration, velocity, and position.
+% -All graphs should
+%show time values from 0 to 12 seconds
+%include a grid, title and axes labels (include units on your axes labels
+
+%Velocity Plot
+subplot(3,1,1)
+plot(time,vel,'b-o','LineWidth',1.5)
+grid on
+title('Velocity v Time')
+xlabel('Time(s)')
+ylabel('Velocity(m/s)')
+xlim([0 12])
 
