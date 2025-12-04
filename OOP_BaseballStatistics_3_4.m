@@ -11,3 +11,17 @@ for i = 1:numPlayers
 
     players(i) = player(name, team, hits, walks, atbats);
 end
+
+%  filtering 
+battingAbove300 = players([players.battingAvg] > 0.300);
+onbaseAbove350  = players([players.onBasePct] > 0.350);
+
+%  output for batting average
+fprintf("\nThe players with a batting average higher than 0.300 are:\n");
+
+for p = battingAbove300
+    fprintf("%s:\n", p.name);
+    fprintf("Team: %s\n", p.team);
+    p.displayStats();
+    fprintf("\n");
+end
